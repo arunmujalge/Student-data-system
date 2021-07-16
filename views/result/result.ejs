@@ -1,0 +1,32 @@
+<%- include('../partials/header'); %>
+<div class="term" style="text-align:center;">
+<h1><%= listTitle %>-result</h1>
+<h4>
+<a href="/classes/<%= class2 %>">back</a>
+</h4>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Marks</th>
+      <th scope="col">Attendence</th>
+      <th scope="col">Percentage</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% newListItems.forEach(function(item){ %>
+    <tr>
+      <th scope="row"><%= item.name %></th>
+      <td><%= item.term[i].marks.marks %></td>
+      <td><%= item.term[i].marks.attendence %></td>
+      <td><%= item.term[i].marks.percentage %></td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+</div>
+
+<%- include('../partials/footer'); %>

@@ -1,0 +1,30 @@
+
+<%- include('../header2'); %>
+
+</br>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Average-Marks</th>
+      <th scope="col">Averege-Attendence</th>
+      <th scope="col">Averege-Percentage</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% newListItems.forEach(function(item){ %>
+        <% var i=(+(item.term[0].marks.marks) + +(item.term[1].marks.marks))/2 %>
+        <% var j=(+(item.term[0].marks.attendence) + +(item.term[1].marks.attendence))/2 %>
+        <% var k=(+(item.term[0].marks.percentage) + +(item.term[1].marks.percentage))/2 %>
+    <tr>
+      <th scope="row"><%= item.name %></th>
+      <td><%= i %></td>
+      <td><%= j %></td>
+      <td><%= k %></td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+<%- include('../partials/footer'); %>

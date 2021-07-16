@@ -1,0 +1,24 @@
+<%- include('../partials/header'); %>
+
+<div class="term" style="text-align:center;">
+<h1><%= listTitle %></h1>
+<h4>
+<a href="/classes/<%= class2 %>">back</a>
+</h4>
+
+
+<% newListItems.forEach(function(item){ %>
+
+  <form class="form-inline" action="/marks/<%= class2 %>/<%= listTitle %>/<%= item.name %>" method="post">
+      <h2 class="h2"><%= item.name %></h2>
+      <input type="number" name="marks" placeholder="marks" class="form-control" autocomplete="off">
+      <input type="number" name="attendence" placeholder="attendence" class="form-control" autocomplete="off">
+      <input type="number" name="percentage" placeholder="percentage" class="form-control" autocomplete="off">
+      <button type="submit" class="btn btn-outline-success btn-sm">
+          <i>add</i>
+      </button>
+  </form>
+<% }); %>
+
+</div>
+<%- include('../partials/footer'); %>
